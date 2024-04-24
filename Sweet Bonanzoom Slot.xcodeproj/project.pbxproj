@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B1BCF442BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF432BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift */; };
+		6B1BCF462BD909FE00DEBE51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF452BD909FE00DEBE51 /* ContentView.swift */; };
+		6B1BCF482BD90A0100DEBE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */; };
+		6B1BCF4B2BD90A0100DEBE51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BCF4A2BD90A0100DEBE51 /* Preview Assets.xcassets */; };
+		6B1BCF552BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */; };
+		6B1BCF5F2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */; };
+		6B1BCF612BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B1BCF512BD90A0200DEBE51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B1BCF382BD909FE00DEBE51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1BCF3F2BD909FE00DEBE51;
+			remoteInfo = "Sweet Bonanzoom Slot";
+		};
+		6B1BCF5B2BD90A0200DEBE51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B1BCF382BD909FE00DEBE51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1BCF3F2BD909FE00DEBE51;
+			remoteInfo = "Sweet Bonanzoom Slot";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6B1BCF402BD909FE00DEBE51 /* Sweet Bonanzoom Slot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sweet Bonanzoom Slot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1BCF432BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotApp.swift; sourceTree = "<group>"; };
+		6B1BCF452BD909FE00DEBE51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B1BCF4A2BD90A0100DEBE51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6B1BCF502BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet Bonanzoom SlotTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotTests.swift; sourceTree = "<group>"; };
+		6B1BCF5A2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet Bonanzoom SlotUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotUITests.swift; sourceTree = "<group>"; };
+		6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B1BCF3D2BD909FE00DEBE51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF4D2BD90A0200DEBE51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF572BD90A0200DEBE51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B1BCF372BD909FE00DEBE51 = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF422BD909FE00DEBE51 /* Sweet Bonanzoom Slot */,
+				6B1BCF532BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */,
+				6B1BCF5D2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */,
+				6B1BCF412BD909FE00DEBE51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B1BCF412BD909FE00DEBE51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF402BD909FE00DEBE51 /* Sweet Bonanzoom Slot.app */,
+				6B1BCF502BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests.xctest */,
+				6B1BCF5A2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B1BCF422BD909FE00DEBE51 /* Sweet Bonanzoom Slot */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF432BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift */,
+				6B1BCF452BD909FE00DEBE51 /* ContentView.swift */,
+				6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */,
+				6B1BCF492BD90A0100DEBE51 /* Preview Content */,
+			);
+			path = "Sweet Bonanzoom Slot";
+			sourceTree = "<group>";
+		};
+		6B1BCF492BD90A0100DEBE51 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF4A2BD90A0100DEBE51 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6B1BCF532BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */,
+			);
+			path = "Sweet Bonanzoom SlotTests";
+			sourceTree = "<group>";
+		};
+		6B1BCF5D2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */,
+				6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */,
+			);
+			path = "Sweet Bonanzoom SlotUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B1BCF3F2BD909FE00DEBE51 /* Sweet Bonanzoom Slot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B1BCF642BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom Slot" */;
+			buildPhases = (
+				6B1BCF3C2BD909FE00DEBE51 /* Sources */,
+				6B1BCF3D2BD909FE00DEBE51 /* Frameworks */,
+				6B1BCF3E2BD909FE00DEBE51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sweet Bonanzoom Slot";
+			productName = "Sweet Bonanzoom Slot";
+			productReference = 6B1BCF402BD909FE00DEBE51 /* Sweet Bonanzoom Slot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6B1BCF4F2BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B1BCF672BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom SlotTests" */;
+			buildPhases = (
+				6B1BCF4C2BD90A0200DEBE51 /* Sources */,
+				6B1BCF4D2BD90A0200DEBE51 /* Frameworks */,
+				6B1BCF4E2BD90A0200DEBE51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B1BCF522BD90A0200DEBE51 /* PBXTargetDependency */,
+			);
+			name = "Sweet Bonanzoom SlotTests";
+			productName = "Sweet Bonanzoom SlotTests";
+			productReference = 6B1BCF502BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6B1BCF592BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B1BCF6A2BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom SlotUITests" */;
+			buildPhases = (
+				6B1BCF562BD90A0200DEBE51 /* Sources */,
+				6B1BCF572BD90A0200DEBE51 /* Frameworks */,
+				6B1BCF582BD90A0200DEBE51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B1BCF5C2BD90A0200DEBE51 /* PBXTargetDependency */,
+			);
+			name = "Sweet Bonanzoom SlotUITests";
+			productName = "Sweet Bonanzoom SlotUITests";
+			productReference = 6B1BCF5A2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B1BCF382BD909FE00DEBE51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					6B1BCF3F2BD909FE00DEBE51 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					6B1BCF4F2BD90A0200DEBE51 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6B1BCF3F2BD909FE00DEBE51;
+					};
+					6B1BCF592BD90A0200DEBE51 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6B1BCF3F2BD909FE00DEBE51;
+					};
+				};
+			};
+			buildConfigurationList = 6B1BCF3B2BD909FE00DEBE51 /* Build configuration list for PBXProject "Sweet Bonanzoom Slot" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B1BCF372BD909FE00DEBE51;
+			productRefGroup = 6B1BCF412BD909FE00DEBE51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B1BCF3F2BD909FE00DEBE51 /* Sweet Bonanzoom Slot */,
+				6B1BCF4F2BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */,
+				6B1BCF592BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B1BCF3E2BD909FE00DEBE51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1BCF4B2BD90A0100DEBE51 /* Preview Assets.xcassets in Resources */,
+				6B1BCF482BD90A0100DEBE51 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF4E2BD90A0200DEBE51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF582BD90A0200DEBE51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B1BCF3C2BD909FE00DEBE51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1BCF462BD909FE00DEBE51 /* ContentView.swift in Sources */,
+				6B1BCF442BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF4C2BD90A0200DEBE51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1BCF552BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B1BCF562BD90A0200DEBE51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1BCF5F2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift in Sources */,
+				6B1BCF612BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B1BCF522BD90A0200DEBE51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B1BCF3F2BD909FE00DEBE51 /* Sweet Bonanzoom Slot */;
+			targetProxy = 6B1BCF512BD90A0200DEBE51 /* PBXContainerItemProxy */;
+		};
+		6B1BCF5C2BD90A0200DEBE51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B1BCF3F2BD909FE00DEBE51 /* Sweet Bonanzoom Slot */;
+			targetProxy = 6B1BCF5B2BD90A0200DEBE51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6B1BCF622BD90A0200DEBE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6B1BCF632BD90A0200DEBE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B1BCF652BD90A0200DEBE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sweet Bonanzoom Slot/Preview Content\"";
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-Slot";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B1BCF662BD90A0200DEBE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sweet Bonanzoom Slot/Preview Content\"";
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-Slot";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6B1BCF682BD90A0200DEBE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-SlotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sweet Bonanzoom Slot.app/Sweet Bonanzoom Slot";
+			};
+			name = Debug;
+		};
+		6B1BCF692BD90A0200DEBE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-SlotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sweet Bonanzoom Slot.app/Sweet Bonanzoom Slot";
+			};
+			name = Release;
+		};
+		6B1BCF6B2BD90A0200DEBE51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-SlotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sweet Bonanzoom Slot";
+			};
+			name = Debug;
+		};
+		6B1BCF6C2BD90A0200DEBE51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMRR2M76BP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UmniashaStudio.Sweet-Bonanzoom-SlotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sweet Bonanzoom Slot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B1BCF3B2BD909FE00DEBE51 /* Build configuration list for PBXProject "Sweet Bonanzoom Slot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1BCF622BD90A0200DEBE51 /* Debug */,
+				6B1BCF632BD90A0200DEBE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B1BCF642BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom Slot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1BCF652BD90A0200DEBE51 /* Debug */,
+				6B1BCF662BD90A0200DEBE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B1BCF672BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom SlotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1BCF682BD90A0200DEBE51 /* Debug */,
+				6B1BCF692BD90A0200DEBE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B1BCF6A2BD90A0200DEBE51 /* Build configuration list for PBXNativeTarget "Sweet Bonanzoom SlotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1BCF6B2BD90A0200DEBE51 /* Debug */,
+				6B1BCF6C2BD90A0200DEBE51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B1BCF382BD909FE00DEBE51 /* Project object */;
+}
