@@ -11,9 +11,12 @@
 		6B1BCF462BD909FE00DEBE51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF452BD909FE00DEBE51 /* ContentView.swift */; };
 		6B1BCF482BD90A0100DEBE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */; };
 		6B1BCF4B2BD90A0100DEBE51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BCF4A2BD90A0100DEBE51 /* Preview Assets.xcassets */; };
-		6B1BCF552BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */; };
-		6B1BCF5F2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */; };
-		6B1BCF612BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */; };
+		6B1BCF722BD90B6600DEBE51 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCF712BD90B6600DEBE51 /* GameScene.swift */; };
+		6B1BCFB62BD92ECE00DEBE51 /* MavenPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BCFB52BD92ECE00DEBE51 /* MavenPro-VariableFont_wght.ttf */; };
+		6B1BCFB92BD9335900DEBE51 /* FirstWelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCFB82BD9335900DEBE51 /* FirstWelcomePage.swift */; };
+		6B1BCFBB2BD9449600DEBE51 /* SecondWelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BCFBA2BD9449600DEBE51 /* SecondWelcomePage.swift */; };
+		6B3BBBCB2BDA3CCD00D33241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3BBBCA2BDA3CCD00D33241 /* LaunchScreen.storyboard */; };
+		6B889D9C2BDA9B2000195D1C /* MainMenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +43,14 @@
 		6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B1BCF4A2BD90A0100DEBE51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B1BCF502BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet Bonanzoom SlotTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotTests.swift; sourceTree = "<group>"; };
 		6B1BCF5A2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet Bonanzoom SlotUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotUITests.swift; sourceTree = "<group>"; };
-		6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_Bonanzoom_SlotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6B1BCF712BD90B6600DEBE51 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6B1BCFB52BD92ECE00DEBE51 /* MavenPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		6B1BCFB72BD92F5E00DEBE51 /* Sweet-Bonanzoom-Slot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sweet-Bonanzoom-Slot-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6B1BCFB82BD9335900DEBE51 /* FirstWelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWelcomePage.swift; sourceTree = "<group>"; };
+		6B1BCFBA2BD9449600DEBE51 /* SecondWelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWelcomePage.swift; sourceTree = "<group>"; };
+		6B3BBBCA2BDA3CCD00D33241 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				6B1BCF422BD909FE00DEBE51 /* Sweet Bonanzoom Slot */,
-				6B1BCF532BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */,
-				6B1BCF5D2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */,
 				6B1BCF412BD909FE00DEBE51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,8 +99,10 @@
 		6B1BCF422BD909FE00DEBE51 /* Sweet Bonanzoom Slot */ = {
 			isa = PBXGroup;
 			children = (
+				6B1BCFB72BD92F5E00DEBE51 /* Sweet-Bonanzoom-Slot-Info.plist */,
 				6B1BCF432BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift */,
-				6B1BCF452BD909FE00DEBE51 /* ContentView.swift */,
+				6B889D9A2BDA8D8000195D1C /* Fonts */,
+				6B1BCF742BD90EAC00DEBE51 /* View */,
 				6B1BCF472BD90A0100DEBE51 /* Assets.xcassets */,
 				6B1BCF492BD90A0100DEBE51 /* Preview Content */,
 			);
@@ -110,21 +117,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6B1BCF532BD90A0200DEBE51 /* Sweet Bonanzoom SlotTests */ = {
+		6B1BCF732BD90E8D00DEBE51 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				6B1BCF542BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift */,
+				6B1BCF712BD90B6600DEBE51 /* GameScene.swift */,
 			);
-			path = "Sweet Bonanzoom SlotTests";
+			path = GameScene;
 			sourceTree = "<group>";
 		};
-		6B1BCF5D2BD90A0200DEBE51 /* Sweet Bonanzoom SlotUITests */ = {
+		6B1BCF742BD90EAC00DEBE51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6B1BCF5E2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift */,
-				6B1BCF602BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift */,
+				6B1BCF732BD90E8D00DEBE51 /* GameScene */,
+				6B1BCF452BD909FE00DEBE51 /* ContentView.swift */,
+				6B1BCFB82BD9335900DEBE51 /* FirstWelcomePage.swift */,
+				6B1BCFBA2BD9449600DEBE51 /* SecondWelcomePage.swift */,
+				6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */,
+				6B3BBBCA2BDA3CCD00D33241 /* LaunchScreen.storyboard */,
 			);
-			path = "Sweet Bonanzoom SlotUITests";
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B889D9A2BDA8D8000195D1C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BCFB52BD92ECE00DEBE51 /* MavenPro-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B1BCF4B2BD90A0100DEBE51 /* Preview Assets.xcassets in Resources */,
+				6B3BBBCB2BDA3CCD00D33241 /* LaunchScreen.storyboard in Resources */,
+				6B1BCFB62BD92ECE00DEBE51 /* MavenPro-VariableFont_wght.ttf in Resources */,
 				6B1BCF482BD90A0100DEBE51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B889D9C2BDA9B2000195D1C /* MainMenuPage.swift in Sources */,
+				6B1BCFB92BD9335900DEBE51 /* FirstWelcomePage.swift in Sources */,
+				6B1BCF722BD90B6600DEBE51 /* GameScene.swift in Sources */,
 				6B1BCF462BD909FE00DEBE51 /* ContentView.swift in Sources */,
 				6B1BCF442BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift in Sources */,
+				6B1BCFBB2BD9449600DEBE51 /* SecondWelcomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B1BCF552BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B1BCF5F2BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITests.swift in Sources */,
-				6B1BCF612BD90A0200DEBE51 /* Sweet_Bonanzoom_SlotUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,9 +444,12 @@
 				DEVELOPMENT_TEAM = JMRR2M76BP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sweet-Bonanzoom-Slot-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -436,7 +461,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -451,9 +476,12 @@
 				DEVELOPMENT_TEAM = JMRR2M76BP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sweet-Bonanzoom-Slot-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +493,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
