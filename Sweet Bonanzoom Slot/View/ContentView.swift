@@ -8,7 +8,7 @@ struct ContentView: View {
     let frameWidth = UIScreen.main.bounds.width
     let frameHeight = UIScreen.main.bounds.height + 30
     var body: some View {
-//        MainMenuPage()
+        //MainMenuPage()
         ZStack {
                   FirstWelcomePage(isFirstWelcomeViewShowing: $isFirstWelcomeViewShowing)
                       .offset(x: isFirstWelcomeViewShowing ? 0 : -UIScreen.main.bounds.width)

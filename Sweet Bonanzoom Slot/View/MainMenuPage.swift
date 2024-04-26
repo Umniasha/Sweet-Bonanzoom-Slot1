@@ -8,73 +8,28 @@
 import SwiftUI
 
 struct MainMenuPage: View {
+    
+    @State private var score: String = "100000"
+    @State private var rotationAnglePlay: Double = 0
+    @State private var rotationAngleShop: Double = 0
+    @State private var selectionView : String? = nil
+    
+    
     var body: some View {
-       
+        NavigationView{
             VStack{   //MARK: main vertical stack
                 
-                        HStack{ //MARK: top game menu
-                            Button(action: {
-                                
-                                
-                                    }) {
-                                        Image("InfoIcon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 60)
-                                            .shadow(color: .black, radius: 2, x: 0, y: 2)
-                                            
-                                    }
+                        HStack{ //MARK: top bar
+                            
+                            InfoButton()
+                            
                             Spacer()
                             
-                            ZStack{ //MARK: score frame
-                                Image("ScoreFrame")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 150)
-                                    .shadow(color: .black, radius: 2, x: 0, y: 2)
-                                
-                                Text("1000")
-                                    .font(.custom("Maven Pro", size: 18))
-                                    .bold()
-                                    .foregroundColor(.white)
-                                    .shadow(color: .black, radius: 2, x: 0, y: 2)
-                                    .padding(.bottom, 5)
-                                    .minimumScaleFactor(0.5)
-                                
-                                Image("ScoreItem")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50)
-                                    .padding(.top , 25)
-                                    .padding(.leading, 110)
-                            }
-                            
+                            ScoreFrame(score: $score)
                             
                         }
                        
-                
-                ZStack{ //MARK: daily gifts
-                    Image("GiftLine")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: .infinity)
-                    HStack{
-                        
-                        ForEach(0..<5) {i in
-                            if i < 4 {
-                            Image("ClosedBox\(i+1)")
-                                .resizable()
-                                .frame(width: 60, height: 60)
-                            Spacer()
-                            } else {
-                                Image("ClosedBox\(i+1)")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60)
-                            }
-                        }
-                    }
-                }
+
                 
                 HStack{  //MARK: Biggest menu
                     Button(action: {
@@ -132,24 +87,63 @@ struct MainMenuPage: View {
                                     
                             }
                 }
+                .padding(.bottom, -20)
                 
-                HStack(alignment: .top){
-                    Image("CandyForPlayBTN")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: ContentView().frameWidth/1.7)
-                        .padding(.top)
+                HStack(alignment: .top, spacing: 0){  //MARK: Buttons play and shop
+                    ZStack{
+                        Image("CandyForPlayBTN")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: ContentView().frameWidth/1.7)
+                            .rotationEffect(.degrees(rotationAnglePlay))
+                        
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    rotationAnglePlay -= 360
+                                    self.selectionView = "Play"
+                                }
+                                    }) {
+                                        Image("PlayBTN")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: ContentView().frameWidth/1.7 )
+                                        }
+                    }
+                    .padding(.top)
+                    .padding(.trailing, -45)
+                    
+                    ZStack{
+                        Image("CandyForShopBTN")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: ContentView().frameWidth/4)
+                            .rotationEffect(.degrees(rotationAngleShop))
+                        
+                        
+                        Button(action: {
+                            withAnimation(.spring()) {
+                                rotationAngleShop -= 360
+                            }
+                                }) {
+                                    Image("ShopBTN")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: ContentView().frameWidth/5.5)
+
+                                }
+                    }
+                    NavigationLink(tag: "Play", selection: $selectionView) {
+                        InfoPage()
+                    } label: {
+                        //
+                    }
+                    .transition(.opacity)
 
                     
-                    Image("CandyForShopBTN")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: ContentView().frameWidth/5)
-
                 }
                 Spacer()
                 
-            }
+            } //MARK: end of main vertical stack
             .padding([.leading, .trailing])
             .background(alignment: .bottom) {
                 Image("MainMenuBG")
@@ -158,6 +152,9 @@ struct MainMenuPage: View {
                                        .aspectRatio(contentMode: .fill)
                                        .frame(height: ContentView().frameHeight)
             }
+            .navigationBarHidden(true)
+            
+        }
     }
 }
 
