@@ -11,7 +11,7 @@ import SpriteKit
 struct GameViewPage: View {
     
     var scene: SKScene
-    
+    let sceneWidth = UIScreen.main.bounds.width*0.9
     @State private var readyGame: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var setBet: Bool = true
@@ -48,11 +48,11 @@ struct GameViewPage: View {
                 ZStack{
                     
                    SpriteView(scene: scene, options: [.allowsTransparency])
-                        .frame(width: UIScreen.main.bounds.width-40, height: (UIScreen.main.bounds.width-40)*1.16)
+                        .frame(width: sceneWidth, height: sceneWidth*1.16)
                         
                     Image("GameFrame")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width-40, height: (UIScreen.main.bounds.width-40)*1.16)
+                        .frame(width: sceneWidth, height: sceneWidth*1.16)
                     Button {
                         //
                     } label: {

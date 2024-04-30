@@ -23,6 +23,9 @@
 		6B561CFA2BDBE59500C701FC /* DailyGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B561CF92BDBE59500C701FC /* DailyGifts.swift */; };
 		6B561CFD2BDBE6B700C701FC /* Gifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B561CFC2BDBE6B700C701FC /* Gifts.swift */; };
 		6B56705D2BDEA28500C2E974 /* NavigationTransitions in Frameworks */ = {isa = PBXBuildFile; productRef = 6B56705C2BDEA28500C2E974 /* NavigationTransitions */; };
+		6B6531502BE1078000742919 /* ShopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65314F2BE1078000742919 /* ShopPage.swift */; };
+		6B6531522BE10A8100742919 /* xPriceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6531512BE10A8100742919 /* xPriceFrame.swift */; };
+		6B6531542BE113D600742919 /* BackgroundShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6531532BE113D600742919 /* BackgroundShop.swift */; };
 		6B75B2472BDF93470037B13F /* X2Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75B2462BDF93470037B13F /* X2Button.swift */; };
 		6B75B2492BDF9D2E0037B13F /* ChooseElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75B2482BDF9D2E0037B13F /* ChooseElementButton.swift */; };
 		6B889D9C2BDA9B2000195D1C /* MainMenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */; };
@@ -51,6 +54,9 @@
 		6B561CF72BDBE12100C701FC /* TopBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarIcon.swift; sourceTree = "<group>"; };
 		6B561CF92BDBE59500C701FC /* DailyGifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGifts.swift; sourceTree = "<group>"; };
 		6B561CFC2BDBE6B700C701FC /* Gifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifts.swift; sourceTree = "<group>"; };
+		6B65314F2BE1078000742919 /* ShopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPage.swift; sourceTree = "<group>"; };
+		6B6531512BE10A8100742919 /* xPriceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xPriceFrame.swift; sourceTree = "<group>"; };
+		6B6531532BE113D600742919 /* BackgroundShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShop.swift; sourceTree = "<group>"; };
 		6B75B2462BDF93470037B13F /* X2Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X2Button.swift; sourceTree = "<group>"; };
 		6B75B2482BDF9D2E0037B13F /* ChooseElementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseElementButton.swift; sourceTree = "<group>"; };
 		6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPage.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				6B1BCF712BD90B6600DEBE51 /* GameScene.swift */,
+				6B65314F2BE1078000742919 /* ShopPage.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 				6B561CF32BDBDDFA00C701FC /* Buttons */,
 				6B561CF52BDBDE5E00C701FC /* ScoreFrame.swift */,
 				6B561CF92BDBE59500C701FC /* DailyGifts.swift */,
+				6B6531532BE113D600742919 /* BackgroundShop.swift */,
 			);
 			path = ViewElements;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 				6B75B2482BDF9D2E0037B13F /* ChooseElementButton.swift */,
 				6BB885482BDFB37E0045E63A /* BetView.swift */,
 				6BB8854A2BDFBB3A0045E63A /* SpeenButton.swift */,
+				6B6531512BE10A8100742919 /* xPriceFrame.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6531502BE1078000742919 /* ShopPage.swift in Sources */,
 				6B0579A92BDBB1FE00B78865 /* тест.swift in Sources */,
 				6BB8854B2BDFBB3A0045E63A /* SpeenButton.swift in Sources */,
 				6B889D9C2BDA9B2000195D1C /* MainMenuPage.swift in Sources */,
@@ -272,6 +282,8 @@
 				6B561CF62BDBDE5E00C701FC /* ScoreFrame.swift in Sources */,
 				6B1BCFBB2BD9449600DEBE51 /* SecondWelcomePage.swift in Sources */,
 				6B561CFA2BDBE59500C701FC /* DailyGifts.swift in Sources */,
+				6B6531542BE113D600742919 /* BackgroundShop.swift in Sources */,
+				6B6531522BE10A8100742919 /* xPriceFrame.swift in Sources */,
 				6B561CFD2BDBE6B700C701FC /* Gifts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

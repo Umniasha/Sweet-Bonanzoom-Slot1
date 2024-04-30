@@ -148,7 +148,7 @@ struct MainMenuPage: View {
                     
                     
                     NavigationLink(tag: "Shop", selection: $selectionView) {
-                        InfoPage()
+                        ShopPage()
                     } label: {
                         //
                     }
