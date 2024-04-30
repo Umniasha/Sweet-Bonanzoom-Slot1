@@ -35,20 +35,15 @@ struct MultyLineText:View{
 
 struct InfoPage: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var score: String = "100000"
 
     var body: some View {
         
-        VStack{
+        ZStack{
             
-            HStack{
-                Image("BackBTN")
-                
-                Spacer()
-                
-                ScoreFrame(score: $score)
-            }
-            ScrollView{
+            
+            ScrollView(showsIndicators: false){
                 VStack{
                 Image("InfoIcon")
                     .resizable()
@@ -87,6 +82,7 @@ struct InfoPage: View {
                     .frame(width: ContentView().frameWidth/3)
                     .padding(.bottom, 5)
                 }
+                .padding(.top, 100)
                 
                 VStack{
                     
@@ -156,11 +152,27 @@ struct InfoPage: View {
                     
                     HeaderText(text: "Good luck in the game! May every move bring you joy and success!")
                 }
+                
+               
+                
+            }
+            VStack{
+                HStack{
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        TopBarIcon(imageName: "BackBTN")
+                    }
+
+                    Spacer()
+                    
+                    ScoreFrame()
+                }
+                
+                
+                Spacer()
             }
             
-            
-            
-            Spacer()
         }
         .padding([.leading, .trailing])
         .background(Image("InfoPageBG")
@@ -168,11 +180,13 @@ struct InfoPage: View {
                         .edgesIgnoringSafeArea(.all)
                         .aspectRatio(contentMode: .fill)
                         .frame(width: ContentView().frameWidth))
+        .navigationBarHidden(true)
     }
 }
 
 struct InfoPage_Previews: PreviewProvider {
     static var previews: some View {
         InfoPage()
+            .environmentObject(UserData())
     }
 }

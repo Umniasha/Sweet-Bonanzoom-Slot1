@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct ScoreFrame: View {
-    @Binding var score : String
+    
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
         ZStack{ //MARK: score frame
             Image("ScoreFrame")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 60)
+                .frame(height: 45)
                 .shadow(color: .black, radius: 2, x: 0, y: 2)
             
-            Text(score)
+            Text(String(userData.coins))
                 .font(.custom("Maven Pro", size: 18))
                 .bold()
                 .foregroundColor(.white)
@@ -29,9 +31,9 @@ struct ScoreFrame: View {
             Image("ScoreItem")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60)
+                .frame(width: 40)
                 .padding(.top , 25)
-                .padding(.leading, 110)
+                .padding(.leading, 100)
         }
     }
 }

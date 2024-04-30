@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import NavigationTransitions
 
 struct MainMenuPage: View {
     
-    @State private var score: String = "100000"
+    
     @State private var rotationAnglePlay: Double = 0
     @State private var rotationAngleShop: Double = 0
     @State private var selectionView : String? = nil
@@ -21,13 +22,19 @@ struct MainMenuPage: View {
                 
                         HStack{ //MARK: top bar
                             
-                            InfoButton()
+                            NavigationLink {
+                                InfoPage()
+                            } label: {
+                                TopBarIcon(imageName: "InfoBTN")
+                                
+                            }
                             
                             Spacer()
                             
-                            ScoreFrame(score: $score)
+                            ScoreFrame()
                             
                         }
+                DailyGifts()
                        
 
                 
@@ -123,6 +130,7 @@ struct MainMenuPage: View {
                         Button(action: {
                             withAnimation(.spring()) {
                                 rotationAngleShop -= 360
+                                self.selectionView = "Shop"
                             }
                                 }) {
                                     Image("ShopBTN")
@@ -133,13 +141,17 @@ struct MainMenuPage: View {
                                 }
                     }
                     NavigationLink(tag: "Play", selection: $selectionView) {
+                        GameViewPage(scene: GameScene())
+                    } label: {
+                        //
+                    }
+                    
+                    
+                    NavigationLink(tag: "Shop", selection: $selectionView) {
                         InfoPage()
                     } label: {
                         //
                     }
-                    .transition(.opacity)
-
-                    
                 }
                 Spacer()
                 
@@ -155,11 +167,16 @@ struct MainMenuPage: View {
             .navigationBarHidden(true)
             
         }
+        .navigationViewStyle(.stack)
+        .navigationTransition(
+            .fade(.in).animation(.easeInOut(duration: 0.3))
+        )
     }
 }
 
 struct MainMenuPage_Previews: PreviewProvider {
     static var previews: some View {
         MainMenuPage()
+            .environmentObject(UserData())
     }
 }

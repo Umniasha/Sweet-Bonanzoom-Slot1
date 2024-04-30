@@ -13,10 +13,6 @@ struct FirstWelcomePage: View {
     
     var body: some View {
         
-        ZStack{
-            
-            
-                
             VStack(alignment: .center){
                 
                 Image("WelcomIcon")
@@ -57,8 +53,8 @@ struct FirstWelcomePage: View {
                     .frame(width: ContentView().frameWidth, height: ContentView().frameHeight)
                     .aspectRatio(contentMode: .fill)
                     
-            }
         }
+            .transition(.opacity.animation(.linear))
     }
 }
 

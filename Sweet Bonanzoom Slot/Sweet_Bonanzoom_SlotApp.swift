@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct Sweet_Bonanzoom_SlotApp: App {
+    
+    @StateObject var userData = UserData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userData)
+            
         }
     }
 }

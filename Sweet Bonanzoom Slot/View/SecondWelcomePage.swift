@@ -9,15 +9,10 @@ import SwiftUI
 
 struct SecondWelcomePage: View {
     
-    @Binding var isFirstWelcomeViewShowing: Bool
+    @Binding var showMenuPage: Bool
     
     
     var body: some View {
-        
-        ZStack{
-            
-            
-            
             VStack(alignment: .center){
                 
                 Image("PleaseNoteIcon")
@@ -39,7 +34,7 @@ struct SecondWelcomePage: View {
                 
                 Button(action: {
                     withAnimation(.spring()){
-                        isFirstWelcomeViewShowing.toggle()
+                        showMenuPage.toggle()
                     }
                         }) {
                             Image("StartBTN")
@@ -56,7 +51,6 @@ struct SecondWelcomePage: View {
                             .resizable()
                             .frame(width: ContentView().frameWidth, height: ContentView().frameHeight)
                             .edgesIgnoringSafeArea(.all))
-        }
     }
 }
 
