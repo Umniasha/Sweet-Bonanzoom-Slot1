@@ -55,7 +55,6 @@ struct BackgroundShop: View {
                 .padding(.top, width*1.45)
                 
         }
-        //.padding([.leading, .trailing])
     }
 }
 

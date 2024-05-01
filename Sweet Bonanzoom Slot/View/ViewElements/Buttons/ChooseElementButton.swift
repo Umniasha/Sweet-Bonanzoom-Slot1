@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ChooseElementButton: View {
-        var isActive: Bool = true
+        var isActive: Bool = false
         var text: String = "CHOSE YOUR\nELEMENT"
         var action: ()->Void
         var isChoosed: Bool = true
-        var elementName : String = "Info6"
+        var elementName : String? = "Info6"
         var frameWidth = (ContentView().frameWidth-20)/2
         
         var body: some View {
@@ -21,7 +21,7 @@ struct ChooseElementButton: View {
                         action()
                     } label: {
                         ZStack{
-                            Image(isActive ? "ChooseElementBTN" : "ChooseElementBTN" )
+                            Image(isActive ? "ChooseElementBTN" : "NoChooseElementBTN" )
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(minWidth: frameWidth)
@@ -34,12 +34,12 @@ struct ChooseElementButton: View {
                             .multilineTextAlignment(.center)
                             .shadow(color: .black, radius: 2, x: 0, y: 2)
                             .minimumScaleFactor(0.5)
-                    if isChoosed{
+                    if let elementName = elementName{
                         ZStack{
                             Image(elementName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 50)
+                                .frame(width: 60)
                                 
                         }
                         .padding(.top , 60)

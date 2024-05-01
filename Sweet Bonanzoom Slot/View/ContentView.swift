@@ -20,6 +20,7 @@ struct ContentView: View {
 
                 SecondWelcomePage(showMenuPage: $showMenuPage)
                       .offset(x: isFirstWelcomeViewShowing ? UIScreen.main.bounds.width : 0)
+                
             }
         }
     }

@@ -32,6 +32,8 @@
 		6B9333BC2BDEA63B0075F4C9 /* GameViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9333BB2BDEA63B0075F4C9 /* GameViewPage.swift */; };
 		6B9333BE2BDEA7750075F4C9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9333BD2BDEA7750075F4C9 /* UserData.swift */; };
 		6B93AF402BE0DAA60005C7B6 /* PausePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B93AF3F2BE0DAA60005C7B6 /* PausePage.swift */; };
+		6BA014E72BE221D5005B1725 /* SelectElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA014E62BE221D5005B1725 /* SelectElementPage.swift */; };
+		6BA014E92BE226BF005B1725 /* ChooseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA014E82BE226BF005B1725 /* ChooseElement.swift */; };
 		6BB885492BDFB37E0045E63A /* BetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB885482BDFB37E0045E63A /* BetView.swift */; };
 		6BB8854B2BDFBB3A0045E63A /* SpeenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8854A2BDFBB3A0045E63A /* SpeenButton.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		6B9333BB2BDEA63B0075F4C9 /* GameViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewPage.swift; sourceTree = "<group>"; };
 		6B9333BD2BDEA7750075F4C9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6B93AF3F2BE0DAA60005C7B6 /* PausePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePage.swift; sourceTree = "<group>"; };
+		6BA014E62BE221D5005B1725 /* SelectElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectElementPage.swift; sourceTree = "<group>"; };
+		6BA014E82BE226BF005B1725 /* ChooseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseElement.swift; sourceTree = "<group>"; };
 		6BB885482BDFB37E0045E63A /* BetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetView.swift; sourceTree = "<group>"; };
 		6BB8854A2BDFBB3A0045E63A /* SpeenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeenButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				6B1BCF712BD90B6600DEBE51 /* GameScene.swift */,
-				6B65314F2BE1078000742919 /* ShopPage.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -130,16 +133,18 @@
 		6B1BCF742BD90EAC00DEBE51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6B93AF3F2BE0DAA60005C7B6 /* PausePage.swift */,
 				6B561CF22BDBDDB600C701FC /* ViewElements */,
 				6B1BCF732BD90E8D00DEBE51 /* GameScene */,
-				6B1BCF452BD909FE00DEBE51 /* ContentView.swift */,
-				6B9333BB2BDEA63B0075F4C9 /* GameViewPage.swift */,
 				6B1BCFB82BD9335900DEBE51 /* FirstWelcomePage.swift */,
 				6B1BCFBA2BD9449600DEBE51 /* SecondWelcomePage.swift */,
+				6B1BCF452BD909FE00DEBE51 /* ContentView.swift */,
 				6B889D9B2BDA9B1F00195D1C /* MainMenuPage.swift */,
-				6B3BBBCA2BDA3CCD00D33241 /* LaunchScreen.storyboard */,
+				6B9333BB2BDEA63B0075F4C9 /* GameViewPage.swift */,
+				6B65314F2BE1078000742919 /* ShopPage.swift */,
+				6B93AF3F2BE0DAA60005C7B6 /* PausePage.swift */,
+				6BA014E62BE221D5005B1725 /* SelectElementPage.swift */,
 				6B50406B2BDBCF3F00790AD5 /* InfoPage.swift */,
+				6B3BBBCA2BDA3CCD00D33241 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				6B561CF52BDBDE5E00C701FC /* ScoreFrame.swift */,
 				6B561CF92BDBE59500C701FC /* DailyGifts.swift */,
 				6B6531532BE113D600742919 /* BackgroundShop.swift */,
+				6BA014E82BE226BF005B1725 /* ChooseElement.swift */,
 			);
 			path = ViewElements;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			files = (
 				6B6531502BE1078000742919 /* ShopPage.swift in Sources */,
 				6B0579A92BDBB1FE00B78865 /* тест.swift in Sources */,
+				6BA014E72BE221D5005B1725 /* SelectElementPage.swift in Sources */,
 				6BB8854B2BDFBB3A0045E63A /* SpeenButton.swift in Sources */,
 				6B889D9C2BDA9B2000195D1C /* MainMenuPage.swift in Sources */,
 				6B93AF402BE0DAA60005C7B6 /* PausePage.swift in Sources */,
@@ -279,6 +286,7 @@
 				6B75B2472BDF93470037B13F /* X2Button.swift in Sources */,
 				6B1BCF442BD909FE00DEBE51 /* Sweet_Bonanzoom_SlotApp.swift in Sources */,
 				6B75B2492BDF9D2E0037B13F /* ChooseElementButton.swift in Sources */,
+				6BA014E92BE226BF005B1725 /* ChooseElement.swift in Sources */,
 				6B561CF62BDBDE5E00C701FC /* ScoreFrame.swift in Sources */,
 				6B1BCFBB2BD9449600DEBE51 /* SecondWelcomePage.swift in Sources */,
 				6B561CFA2BDBE59500C701FC /* DailyGifts.swift in Sources */,

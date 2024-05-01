@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ShopPage: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var userData: UserData
     let width = ContentView().frameWidth
     
     var body: some View {
@@ -57,18 +59,27 @@ struct ShopPage: View {
                 HStack{
                     
                     Spacer()
+                    Spacer()
                     
                     ForEach(0..<9){i in
+                        let bgName = "bg\(i+1)"
+//                        ForEach(0..<userData.myBackgrounds.count){name in
+//                            if name == bgName {
+//
+//                            }
+//                        }
                         if i<=2 {
-                            BackgroundShop(bgName: "bg\(i+1)", active: true, price: 500, action: {})
+                            BackgroundShop(bgName: bgName, active: true, price: 500, action: {
+                                userData.myBackgrounds.append(bgName)
+                            })
                         } else if i<=5{
-                            BackgroundShop(bgName: "bg\(i+1)", active: true, price: 700, action: {})
+                            BackgroundShop(bgName: bgName, active: true, price: 700, action: {})
                         } else{
-                            BackgroundShop(bgName: "bg\(i+1)", active: true, price: 900, action: {})
+                            BackgroundShop(bgName: bgName, active: true, price: 900, action: {})
                         }
                         
                     }
-
+                    Spacer()
                     Spacer()
                     
                 }

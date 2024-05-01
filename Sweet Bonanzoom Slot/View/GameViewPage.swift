@@ -14,9 +14,12 @@ struct GameViewPage: View {
     let sceneWidth = UIScreen.main.bounds.width*0.9
     @State private var readyGame: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var userData: UserData
     var setBet: Bool = true
     @State private var isPause = false
+    @State private var isChoosed = false
     @State private var selectionView : String? = nil
+    
     
     var body: some View {
         
@@ -35,7 +38,18 @@ struct GameViewPage: View {
                     Spacer()
                     
                     TopBarIcon(imageName: "Info7")
-                    TopBarIcon(imageName: "TopShop")
+                    Button {
+                        selectionView = "Shop"
+                    } label: {
+                        TopBarIcon(imageName: "TopShop")
+                    }
+
+                    NavigationLink(tag: "Shop", selection: $selectionView) {
+                        ShopPage()
+                    } label: {
+                        //
+                    }
+                    
                     
                     ScoreFrame()
                     
@@ -57,20 +71,16 @@ struct GameViewPage: View {
                         //
                     } label: {
                         Image(setBet ? "Update" : "UpdateNotActive")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 30)
+                          
                     }
-                    .padding(.leading,  UIScreen.main.bounds.width-80)
-                    .padding(.bottom, (UIScreen.main.bounds.width-40)*1.1)
+                    .padding(.leading,  sceneWidth*0.9)
+                    .padding(.bottom, sceneWidth*1.1)
                     .disabled(!setBet)
                     
 
                     
                     
                 }
-                .aspectRatio(contentMode: .fit)
-                .minimumScaleFactor(0.5)
                 
                 HStack(spacing:0){
                     VStack(spacing: 10){
@@ -81,7 +91,9 @@ struct GameViewPage: View {
                         }
                         
                         
-                        ChooseElementButton(isActive: true, action: {self.readyGame.toggle()}, isChoosed: readyGame, elementName: "Info6")
+                        ChooseElementButton(isActive: true, action: {
+                            isChoosed.toggle()
+                        }, isChoosed: userData.selectedElement == nil, elementName: userData.selectedElement)
                     }
                     .frame(width: (ContentView().frameWidth-20)/2)
                     Spacer()
@@ -114,8 +126,12 @@ struct GameViewPage: View {
 
             if isPause{
                 PausePage(continueAction: {self.isPause.toggle()}, infoAction: {self.selectionView = "Info"}, menuAction: {
+                    userData.selectedElement = nil
                     self.presentationMode.wrappedValue.dismiss()
                 }).transition(.opacity.animation(.linear))
+            }
+            if isChoosed{
+                SelectElementPage( closeButtonAction: {isChoosed.toggle()})
             }
             NavigationLink(tag: "Info", selection: $selectionView) {
                 InfoPage()

@@ -4,32 +4,12 @@ import SwiftUI
 import SwiftUI
 
 struct ChestView: View {
-    @State private var chests: [Chest] = [
-        Chest(type: .gold),
-        Chest(type: .silver),
-        Chest(type: .bronze),
-        Chest(type: .diamond),
-        Chest(type: .wooden)
-    ]
+    @State private var kek: Bool = true
     
     var body: some View {
-        VStack(spacing: 20) {
-            ForEach(chests) { chest in
-                Button(action: {
-                    if chest.isOpened {
-                        // Здесь можно добавить действие по нажатию на открытый сундук
-                        print("Opened \(chest.type.rawValue)")
-                    } else {
-                        print("This chest is not available yet")
-                    }
-                }) {
-                    Text(chest.type.rawValue.capitalized)
-                        .foregroundColor(chest.isOpened ? .primary : .gray)
-                }
-                .disabled(!chest.isOpened)
-            }
+        Toggle(isOn: $kek) {
+            Text("hello")
         }
-        .padding()
     }
 }
 
