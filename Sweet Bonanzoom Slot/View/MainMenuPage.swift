@@ -141,7 +141,7 @@ struct MainMenuPage: View {
                                 }
                     }
                     NavigationLink(tag: "Play", selection: $selectionView) {
-                        GameViewPage(scene: GameScene())
+                        GameViewPage(gameScene: GameScene())
                     } label: {
                         //
                     }

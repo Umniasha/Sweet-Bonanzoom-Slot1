@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct BetView: View {
-    var isActive: Bool = false
+    let width = UIScreen.main.bounds.width/2.5
+    var isActive: Bool = true
     var text: String = "100"
     var activeMinus: ()->Void
     var activePlus: ()->Void
@@ -19,7 +20,7 @@ struct BetView: View {
             Image("ScoreFrame")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 55)
+                .frame(width: width*0.95)
                 .shadow(color: .black, radius: 2, x: 0, y: 2)
             
             Text("YOUR BET\n\(text)")
@@ -39,12 +40,13 @@ struct BetView: View {
                     Image(isActive ? "btn-" : "Not-")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30)
-                        .padding(.leading, 0  )
+                        .frame(width: width*0.19)
+                        .padding(.leading, 0 )
                 }
                 .disabled(!isActive)
                 
                 Spacer()
+                
                 
                 Button {
                     activePlus()
@@ -52,7 +54,7 @@ struct BetView: View {
                     Image(isActive ? "btn+" : "Not+")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30)
+                        .frame(width: width*0.19)
                         .padding(.leading, 0)
                 }
                 .disabled(!isActive)
@@ -60,9 +62,9 @@ struct BetView: View {
             .frame(width: 180)
             
 
-            
+           
         }
-        .frame(minWidth: (ContentView().frameWidth-20)/2)
+        .frame(width: width)
 
     }
 }

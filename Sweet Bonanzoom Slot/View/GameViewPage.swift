@@ -10,7 +10,9 @@ import SpriteKit
 
 struct GameViewPage: View {
     
-    var scene: SKScene
+    //var scene: SKScene
+    let gameScene : GameScene
+
     let sceneWidth = UIScreen.main.bounds.width*0.9
     @State private var readyGame: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -61,20 +63,19 @@ struct GameViewPage: View {
                 
                 ZStack{
                     
-                   SpriteView(scene: scene, options: [.allowsTransparency])
-                        .frame(width: sceneWidth, height: sceneWidth*1.16)
+                   SpriteView(scene: gameScene, options: [.allowsTransparency])
+                        .aspectRatio(contentMode: .fit)
+                        //.aspectRatio(344/400, contentMode: .fit)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
-                    Image("GameFrame")
-                        .resizable()
-                        .frame(width: sceneWidth, height: sceneWidth*1.16)
                     Button {
-                        //
+                        gameScene.play()
                     } label: {
                         Image(setBet ? "Update" : "UpdateNotActive")
-                          
+
                     }
-                    .padding(.leading,  sceneWidth*0.9)
-                    .padding(.bottom, sceneWidth*1.1)
+                    .padding(.leading,  sceneWidth*0.85)
+                    .padding(.bottom, sceneWidth*1.05)
                     .disabled(!setBet)
                     
 
@@ -85,9 +86,9 @@ struct GameViewPage: View {
                 HStack(spacing:0){
                     VStack(spacing: 10){
                         HStack(alignment: .center, spacing: 0){
-                            X2Button(isActive: true, text: "x2", action: {print("")})
-                            X2Button(isActive: true, text: "x5", action: {print("")})
-                            X2Button(isActive: true, text: "x10", action: {print("")})
+                            X2Button(isActive: true, text: "x2", action: {print("")}, value: 1)
+                            X2Button(isActive: true, text: "x5", action: {print("")}, value: 1)
+                            X2Button(isActive: true, text: "x10", action: {print("")}, value: 1)
                         }
                         
                         
@@ -99,8 +100,11 @@ struct GameViewPage: View {
                     Spacer()
                     VStack{
                         BetView(isActive: true, activeMinus: {}, activePlus: {})
-                        SpeenButton(isActive: true, text: "SPEEN", imageName: "Speen")
-                        SpeenButton(isActive: true, text: "AUTO SPEEN", imageName: "AutoSpin")
+                        SpeenButton(action: {
+                            gameScene.letSpeen()
+                            gameScene.letSpeen()
+                        }, isActive: true, text: "SPEEN", imageName: "Speen")
+                        SpeenButton(action: {}, isActive: true, text: "AUTO SPEEN", imageName: "AutoSpin")
                     }
                     .frame(width: (ContentView().frameWidth-20)/2)
                     
@@ -145,7 +149,7 @@ struct GameViewPage: View {
 
 struct GameViewPage_Previews: PreviewProvider {
     static var previews: some View {
-        GameViewPage(scene: GameScene())
+        GameViewPage(gameScene: GameScene())
             .environmentObject(UserData())
     }
 }

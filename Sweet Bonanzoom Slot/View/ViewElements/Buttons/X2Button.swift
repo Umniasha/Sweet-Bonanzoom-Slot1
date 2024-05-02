@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct X2Button: View {
+    
     var isActive: Bool = true
     var text: String = "x2"
-    var value: Int = 5
     var action: ()->Void
+    var value: Int = 1
     
     var body: some View {
+        
         ZStack{
             Button {
                 action()
             } label: {
                
-                TopBarIcon(imageName: !isActive ? "xBTN" : "xBTNActive")
+                TopBarIcon(imageName: !isActive || value==0 ? "xBTN" : "xBTNActive")
                 
                
             }
-            .disabled(!isActive)
+            .disabled(!isActive || value==0)
             
             Text(text)
                 .font(.custom("Maven Pro", size: 18))
@@ -55,7 +57,6 @@ struct X2Button: View {
 
 
         }
-        .minimumScaleFactor(0.5)
     }
 }
 

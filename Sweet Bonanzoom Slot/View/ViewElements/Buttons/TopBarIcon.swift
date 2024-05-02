@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TopBarIcon: View {
+    let width = UIScreen.main.bounds.width*0.12
     var imageName : String 
     var body: some View {
         
         Image(imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: 50)
+            .frame(height: width)
             .shadow(color: .black, radius: 2, x: 0, y: 2)
 
 //

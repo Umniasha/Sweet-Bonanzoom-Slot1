@@ -13,7 +13,7 @@ struct ChooseElementButton: View {
         var action: ()->Void
         var isChoosed: Bool = true
         var elementName : String? = "Info6"
-        var frameWidth = (ContentView().frameWidth-20)/2
+        var frameWidth = ContentView().frameWidth*0.4
         
         var body: some View {
            

@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct SpeenButton: View {
+    var action: ()->Void
+    let width = UIScreen.main.bounds.width/2.5
     var isActive: Bool = false
     var text: String = "SPEEN"
     var imageName: String = "speenNotActive"
+    
     var body: some View {
         Button {
-            //
+            action()
         } label: {
             ZStack{
                 
                 Image(isActive ? imageName : "speenNotActive")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(minWidth: (ContentView().frameWidth-20)/2)
+                    .frame(width: width)
                     .shadow(color: .black, radius: 2, x: 0, y: 2)
                 Text(text)
                     .font(.custom("Maven Pro", size: 18))
@@ -41,6 +44,6 @@ struct SpeenButton: View {
 
 struct SpeenButton_Previews: PreviewProvider {
     static var previews: some View {
-        SpeenButton()
+        SpeenButton(action: {})
     }
 }
