@@ -5,15 +5,13 @@ import SpriteKit
 
 struct GameView: View {
     var scene: SKScene
-    let sceneWidth = UIScreen.main.bounds.width
-    let sceneHeight = UIScreen.main.bounds.width
     var body: some View {
         SpriteView(scene: scene, options: [.allowsTransparency])
-            .frame(width: sceneWidth, height: sceneHeight)
     }
 }
 
 class GameScene: SKScene {
+    
     let sceneWidth: Double = 0.86
     let sceneHeight: Double = 1
     let numRows = 6
@@ -23,13 +21,23 @@ class GameScene: SKScene {
     var elementsArray = [SKSpriteNode]()
     var nameArray = [String]()
     var selectTiles : Bool = true
+    @Published var selectedFrames: [SKSpriteNode] = []
+    var frameArray : [SKSpriteNode] = []
+    var isSpeen = false
+    let countSelectionCells = 10
+    var speenStop = true
+    var selectedElements : [String] = []
+    var isSelect = false
+    var firstTimer = Timer()
+    var secondTimer = Timer()
+    var autoSpeen = false
     
     override func didMove(to view: SKView) {
+     
         play()
         
-        
-        
     }
+    
     func play(){
         scene?.removeAllChildren()
         elementsArray = []
@@ -52,63 +60,149 @@ class GameScene: SKScene {
         elementsArray = []
         
         createGrid()
-
-        if selectTiles{
-            for element in elementsArray {
-                let frame = SKSpriteNode(imageNamed: "ElementFrameGS")
-                frame.size = CGSize(width: sceneWidth*0.16, height: sceneWidth*0.16)
-                frame.zPosition=2
-                element.addChild(frame)
+       
+        
+    }
+    
+    func createFrameElements(){
+            if elementsArray[0].children.isEmpty {
+                for element in elementsArray {
+                    let frame = SKSpriteNode(imageNamed: "ElementFrameGS")
+                    frame.size = CGSize(width: sceneWidth*0.16, height: sceneWidth*0.16)
+                    frame.zPosition=2
+                    frameArray.append(frame)
+                    element.addChild(frame)
+                }
             }
+        isSelect = true
+        
+    }
+    
+    func removeFrames(){
+        for frame in frameArray{
+            frame.removeFromParent()
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard isSelect else { return }
         guard let touch = touches.first else { return }
         let touchLocation = touch.location(in: self)
+        if let node = elementsArray.first(where: { $0.contains(touchLocation) }) {
+            if let existingFrame = node.children.first(where: { $0.name == "SelectElementFrameGS" }) as? SKSpriteNode {
+                existingFrame.removeFromParent()
+                if let indexToRemove = selectedFrames.firstIndex(of: existingFrame) {
+                    selectedFrames.remove(at: indexToRemove)
+                }
+            } else {
+                let frame = SKSpriteNode(imageNamed: "SelectElementFrameGS")
+                frame.size = CGSize(width: sceneWidth * 0.16, height: sceneWidth * 0.16)
+                frame.zPosition = 100
+                frame.name = "SelectElementFrameGS"
+                node.addChild(frame)
+                selectedFrames.append(frame)
+                if selectedFrames.count > countSelectionCells {
+                    if let firstFrame = selectedFrames.first {
+                        firstFrame.removeFromParent()
+                        if let indexToRemove = selectedFrames.firstIndex(of: firstFrame) {
+                            selectedFrames.remove(at: indexToRemove)
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    func speen(){
+        speenStop = false
         
-        if let node = elementsArray.first(where: {$0.contains(touchLocation)}){
-            node.removeAllChildren()
-            let frame = SKSpriteNode(imageNamed: "SelectElementFrameGS")
-            frame.size = CGSize(width: sceneWidth*0.16, height: sceneWidth*0.16)
-            frame.zPosition=2
-            node.addChild(frame)
-            
+        var i = 0
+        secondTimer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true, block: { timer in
+            self.letSpeen( timeInterval: 0.07)
+            i+=1
+            if self.speenStop {
+                timer.invalidate()
+                    
+               
+            }
+        })
+             
+    }
+    
+    func stopSpeen(afterSpeen:  @escaping ()->Void){
+        speenStop = true
+        print("true")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.firstTimer.invalidate()
+            self.secondTimer.invalidate()
+            afterSpeen()
         }
     }
     
+    func autoSpeen(afterSpeen:  @escaping ()->Void){
+        if !autoSpeen{
+            autoSpeen.toggle()
+            var i = 0
+            firstTimer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true, block: { timer in
+                self.letSpeen( timeInterval: 0.07)
+                i+=1
+                if i == 5 {
+                    timer.invalidate()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.08 * 30) {
+                        afterSpeen()
+                        self.autoSpeen = false
+                    }
+                    
+                }
+            })
+        }
+        
+        
+        
+    }
     
-    func letSpeen(){
+    
+    
+    func letSpeen(timeInterval: CGFloat ){
+        
         var shuffledNames = nameArray.shuffled()
         var i = 0
-        var j = 0.1
-        _ = Timer.scheduledTimer(withTimeInterval: j, repeats: true, block: { timer in
+        
+        _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { timer in
+            self.selectedElements = []
             if shuffledNames.isEmpty {
                 
                 self.fillNameArray()
                 shuffledNames = self.nameArray.shuffled()
             }
             
-            let name = shuffledNames.removeFirst()
-            let texture = SKTexture(imageNamed: name)
+                    let name = shuffledNames.removeFirst()
+                    let texture = SKTexture(imageNamed: name)
 
-            let fadeOut = SKAction.fadeOut(withDuration: 0.3)
-            let changeTexture = SKAction.setTexture(texture)
-            let fadeIn = SKAction.fadeIn(withDuration: 0.3)
-            let textureChangeAction = SKAction.sequence([fadeOut, changeTexture, fadeIn])
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                    let changeTexture = SKAction.setTexture(texture)
+                    let fadeIn = SKAction.fadeIn(withDuration: 0.2)
+                    let textureChangeAction = SKAction.sequence([fadeOut, changeTexture, fadeIn])
 
-            self.elementsArray[i].run(textureChangeAction)
+                    self.elementsArray[i].run(textureChangeAction)
 
-            self.elementsArray[i].name = name
-
+                    self.elementsArray[i].name = name
+               
             i += 1
-            j += 0.5
             
-            if i == self.elementsArray.count {
+            if i == 30 {
                 i = 0
-            }
-            if j >= 45 {
                 timer.invalidate()
+                for selectedFrame in self.selectedFrames {
+                    if let name = selectedFrame.parent?.name{
+                        self.selectedElements.append(name)
+                    }
+                    
+                }
+                
             }
         })
     }

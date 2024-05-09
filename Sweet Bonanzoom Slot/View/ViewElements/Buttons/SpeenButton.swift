@@ -10,34 +10,37 @@ import SwiftUI
 struct SpeenButton: View {
     var action: ()->Void
     let width = UIScreen.main.bounds.width/2.5
-    var isActive: Bool = false
+    var isActive: Bool = true
     var text: String = "SPEEN"
-    var imageName: String = "speenNotActive"
+    var imageName: String = "AutoSpin"
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            ZStack{
-                
-                Image(isActive ? imageName : "speenNotActive")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: width)
-                    .shadow(color: .black, radius: 2, x: 0, y: 2)
-                Text(text)
-                    .font(.custom("Maven Pro", size: 18))
-                    .bold()
-                    .lineSpacing(-100)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 2, x: 0, y: 2)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 5)
-                    .frame(width: 80)
+        VStack{
+            Button {
+                action()
+            } label: {
+                ZStack{
+                    
+                    Image(isActive ? imageName : "speenNotActive")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: width)
+                        .shadow(color: .black, radius: 2, x: 0, y: 2)
+                    Text(text)
+                        .font(.custom("Maven Pro", size: 18))
+                        .bold()
+                        .lineSpacing(-100)
+                        .foregroundColor(.white)
+                        .shadow(color: .black, radius: 2, x: 0, y: 2)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 5)
+                        .frame(width: 80)
+                }
             }
-        }
-        .disabled(!isActive)
+            .disabled(!isActive)
 
+        }
+        
         
     }
 }

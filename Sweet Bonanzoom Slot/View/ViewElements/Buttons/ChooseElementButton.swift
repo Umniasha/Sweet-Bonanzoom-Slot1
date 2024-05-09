@@ -39,7 +39,7 @@ struct ChooseElementButton: View {
                             Image(elementName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 60)
+                                .frame(width: 40)
                                 
                         }
                         .padding(.top , 60)

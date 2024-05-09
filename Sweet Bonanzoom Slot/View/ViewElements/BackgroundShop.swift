@@ -13,6 +13,8 @@ struct BackgroundShop: View {
     var active: Bool = true
     var price: Int = 1000
     var action : ()->Void
+    var used: Bool = true
+    var bought : Bool = true
     var body: some View {
         ZStack{
             Image(bgName)
@@ -24,28 +26,55 @@ struct BackgroundShop: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width)
-            
-            Button {
-                action()
-            } label: {
-                ZStack{
-                    Image(active ? "framePrice": "framePriceNo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: width*0.7)
-                    
-                    Text(String(price))
-                        .font(.custom("Maven Pro", size: 18))
-                        .bold()
-                        .foregroundColor(.white)
-                        .shadow(color: .black, radius: 2, x: 0, y: 2)
-                        .padding(.bottom, 12)
-                        .frame(width: 50)
-                        .lineLimit(1)
+            if bought{
+                Button {
+                    action()
+                } label: {
+                    ZStack{
+                        Image(used ? "framePriceNo": "framePrice")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: width*0.7)
+                        
+                        Text(used ? "USED" : "USE")
+                            .font(.custom("Maven Pro", size: 18))
+                            .bold()
+                            .foregroundColor(.white)
+                            .shadow(color: .black, radius: 2, x: 0, y: 2)
+                            .padding(.bottom, 12)
+                            .frame(width: 50)
+                            .lineLimit(1)
+                    }
                 }
-            }
-            .padding(.top, width*1.35)
-            .disabled(!active)
+                .padding(.top, width*1.35)
+                .disabled(used)
+                
+                } else {
+                    Button {
+                        action()
+                    } label: {
+                        ZStack{
+                           
+                                Image(active ? "framePrice": "framePriceNo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: width*0.7)
+                                
+                                Text(String(price))
+                                    .font(.custom("Maven Pro", size: 18))
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .shadow(color: .black, radius: 2, x: 0, y: 2)
+                                    .padding(.bottom, 12)
+                                    .frame(width: 50)
+                                    .lineLimit(1)
+                            
+                        }
+                    }
+                    .padding(.top, width*1.35)
+                    .disabled(!active)
+                }
+            
             
             Image("ScoreItem")
                 .resizable()
@@ -53,6 +82,7 @@ struct BackgroundShop: View {
                 .frame(width: width*0.2)
                 .padding(.leading, width*0.5)
                 .padding(.top, width*1.45)
+                .opacity(bought ? 0: 1)
                 
         }
     }

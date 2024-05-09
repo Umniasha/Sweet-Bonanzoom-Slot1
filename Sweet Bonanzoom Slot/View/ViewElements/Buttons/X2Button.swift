@@ -9,10 +9,20 @@ import SwiftUI
 
 struct X2Button: View {
     
+    
     var isActive: Bool = true
+    var activBtn: Bool {
+        if (isActive || bonus) || bonus {
+            return false
+        }else {
+            return true
+        }
+    }
     var text: String = "x2"
     var action: ()->Void
-    var value: Int = 1
+    var value: Int = 0
+    var bonus = true
+    var enableBonus = false
     
     var body: some View {
         
@@ -21,11 +31,19 @@ struct X2Button: View {
                 action()
             } label: {
                
-                TopBarIcon(imageName: !isActive || value==0 ? "xBTN" : "xBTNActive")
+                TopBarIcon(imageName: activBtn  ? "xBTN" : "xBTNActive")
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.blue, lineWidth: 4)
+                                .opacity(bonus ? 1 : 0)
+                                )
+                
+                    
                 
                
             }
-            .disabled(!isActive || value==0)
+            .disabled(!isActive || value < 1)
+            
             
             Text(text)
                 .font(.custom("Maven Pro", size: 18))

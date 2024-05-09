@@ -13,6 +13,19 @@ struct ShopPage: View {
     @EnvironmentObject var userData: UserData
     let width = ContentView().frameWidth
     
+    func isBought(bgName: String)->Bool{
+        var isBought = false
+        for name in userData.boughtBG{
+            if bgName == name {
+                isBought = true
+            }
+        }
+        print(isBought)
+        return isBought
+    }
+    
+   
+    
     var body: some View {
         
         VStack(spacing:0){
@@ -37,14 +50,17 @@ struct ShopPage: View {
                 .padding([.leading,.trailing])
             
             HStack(spacing:0){
-                xPriceFrame(active: true, xValue: "x2", price: 500) {
-                    //
+                xPriceFrame(active: userData.coins >= 500, xValue: "x2", price: 500) {
+                    userData.coins -= 500
+                    userData.x2Bonus += 1
                 }
-                xPriceFrame(active: true, xValue: "x5", price: 500) {
-                    //
+                xPriceFrame(active: userData.coins >= 1000, xValue: "x5", price: 1000) {
+                    userData.coins -= 1000
+                    userData.x5Bonus += 1
                 }
-                xPriceFrame(active: true, xValue: "x10", price: 500) {
-                    //
+                xPriceFrame(active: userData.coins >= 3000, xValue: "x10", price: 3000) {
+                    userData.coins -= 3000
+                    userData.x10Bonus += 1
                 }
             }
             
@@ -63,19 +79,37 @@ struct ShopPage: View {
                     
                     ForEach(0..<9){i in
                         let bgName = "bg\(i+1)"
-//                        ForEach(0..<userData.myBackgrounds.count){name in
-//                            if name == bgName {
-//
-//                            }
-//                        }
+
                         if i<=2 {
-                            BackgroundShop(bgName: bgName, active: true, price: 500, action: {
-                                userData.myBackgrounds.append(bgName)
-                            })
+                            BackgroundShop(bgName: bgName, active: userData.coins >= 500, price: 500, action: {
+                                if !isBought(bgName: bgName) {
+                                    userData.coins -= 500
+                                    userData.boughtBG.append(bgName)
+                                } else {
+                                    userData.enabledBG = bgName
+                                }
+                            },used: bgName == userData.enabledBG, bought : isBought(bgName: bgName))
+                            
                         } else if i<=5{
-                            BackgroundShop(bgName: bgName, active: true, price: 700, action: {})
+                            BackgroundShop(bgName: bgName, active: userData.coins >= 700, price: 700, action: {
+                                if !isBought(bgName: bgName) {
+                                    userData.coins -= 700
+                                    userData.boughtBG.append(bgName)
+                                } else {
+                                    userData.enabledBG = bgName
+                                }
+                            },used: bgName == userData.enabledBG, bought : isBought(bgName: bgName))
+                            
                         } else{
-                            BackgroundShop(bgName: bgName, active: true, price: 900, action: {})
+                            BackgroundShop(bgName: bgName, active: userData.coins >= 900, price: 900, action: {
+                                if !isBought(bgName: bgName) {
+                                    userData.coins -= 900
+                                    userData.boughtBG.append(bgName)
+                                } else {
+                                    userData.enabledBG = bgName
+                                }
+                            },used: bgName == userData.enabledBG, bought : isBought(bgName: bgName))
+                            
                         }
                         
                     }
@@ -88,7 +122,7 @@ struct ShopPage: View {
             Spacer()
         }
         .background(alignment: .bottom) {
-            Image("Background 0")
+            Image("\(userData.enabledBG)true")
                    .resizable()
                    .edgesIgnoringSafeArea(.all)
                    .aspectRatio(contentMode: .fill)

@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct SelectElementPage: View {
-    
+    let gameScene : GameScene
     @EnvironmentObject var userData: UserData
-    var closeButtonAction: ()->Void
     @State private var selectedElement: String?
+    
+    var isSelectAction: ()-> Void
+    
+    var closeButtonAction: ()->Void
+    
    
     var body: some View {
         VStack{
@@ -49,7 +53,13 @@ struct SelectElementPage: View {
             }
             Spacer()
             Button {
+                
                 userData.selectedElement = selectedElement
+                if userData.selectedElement != nil {
+                   
+                    isSelectAction()
+                    
+                }
                 closeButtonAction()
             } label: {
                 ZStack{
@@ -85,7 +95,7 @@ struct SelectElementPage: View {
 
 struct SelectElementPage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectElementPage( closeButtonAction: {})
+        SelectElementPage( gameScene: GameScene(), isSelectAction: {}, closeButtonAction: {})
             .environmentObject(UserData())
     }
 }

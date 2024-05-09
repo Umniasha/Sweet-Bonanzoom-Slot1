@@ -14,10 +14,18 @@ struct ChooseElement: View {
     var common: String = "Common"
     var multiplier: String = "x2"
     var action: ()->Void
+    var textSize : CGFloat {
+        if ContentView().frameWidth >= 400 {
+            return 15
+        } else{
+            return 13
+        }
+       
+    }
     var body: some View {
         VStack(spacing: 0){
             Text(elementName)
-                .font(.custom("Maven Pro", size: 18))
+                .font(.custom("Maven Pro", size: textSize+3))
                 .bold()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -50,21 +58,23 @@ struct ChooseElement: View {
                 
             }
             Text(common)
-                .font(.custom("Maven Pro", size: 15))
+                .font(.custom("Maven Pro", size: textSize))
                 .bold()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .shadow(color: .black, radius: 2, x: 0, y: 2)
                 .padding(.top, -5)
+                
             
             Text("Base Multiplier:")
-                .font(.custom("Maven Pro", size: 15))
+                .font(.custom("Maven Pro", size: textSize))
                 .bold()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .shadow(color: .black, radius: 2, x: 0, y: 2)
+                //.minimumScaleFactor(0.5)
             Text(multiplier)
-                .font(.custom("Maven Pro", size: 20))
+                .font(.custom("Maven Pro", size: textSize+5))
                 .bold()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -76,6 +86,7 @@ struct ChooseElement: View {
 
 struct ChooseElement_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseElement( action: {})
+        SelectElementPage( gameScene: GameScene(), isSelectAction: {}, closeButtonAction: {})
+            .environmentObject(UserData())
     }
 }
