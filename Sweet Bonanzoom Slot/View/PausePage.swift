@@ -60,7 +60,7 @@ struct PausePage: View {
             .resizable()
             .edgesIgnoringSafeArea(.all)
             .aspectRatio(contentMode: .fill)
-            .frame(height: ContentView().frameHeight))
+            .frame(width: ContentView().frameWidth, height: ContentView().frameHeight))
         
     }
 }

@@ -24,6 +24,8 @@ class UserData: ObservableObject {
           self.x10Bonus = userDataManager.x10
           self.enabledBG = userDataManager.enabledBG
           self.boughtBG = userDataManager.arrayBG
+          self.freeSpins = userDataManager.freeSpins
+          self.firstStart = userDataManager.firstStart
       }
     
     @Published var x2Bonus: Int {
@@ -50,6 +52,18 @@ class UserData: ObservableObject {
     @Published var boughtBG : [String]{
         didSet {
             userDataManager.arrayBG = boughtBG
+        }
+    }
+    
+    @Published var freeSpins : Int {
+        didSet {
+            userDataManager.freeSpins = freeSpins
+        }
+    }
+    
+    @Published var firstStart : Bool {
+        didSet {
+            userDataManager.firstStart = firstStart
         }
     }
     

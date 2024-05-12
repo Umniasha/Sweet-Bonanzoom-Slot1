@@ -21,7 +21,7 @@ struct X2Button: View {
     var text: String = "x2"
     var action: ()->Void
     var value: Int = 0
-    var bonus = true
+    var bonus = false
     var enableBonus = false
     
     var body: some View {
@@ -35,12 +35,9 @@ struct X2Button: View {
                     .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.blue, lineWidth: 4)
-                                .opacity(bonus ? 1 : 0)
+                                .opacity(bonus && value > 0 ? 1 : 0)
                                 )
                 
-                    
-                
-               
             }
             .disabled(!isActive || value < 1)
             

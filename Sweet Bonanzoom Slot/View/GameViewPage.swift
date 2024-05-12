@@ -25,7 +25,7 @@ struct GameViewPage: View {
     @State private var winnings : Int = 0
     @State private var winBonus : Bool = false
     @State private var bomb : Bool = false
-    @State private var freeSpeens : Bool = false
+    @State private var freeSpeens : Int = 0
     
     
     private var selectedCellsCount: Int {
@@ -53,6 +53,7 @@ struct GameViewPage: View {
     @State private var speenON = false
     
     @State private var isSpeenON = false
+    
 
     func update(){
         if userData.selectedElement != nil && bet > 0  && !isAutoSpeen && gameScene.selectedFrames.count > 0{
@@ -70,6 +71,7 @@ struct GameViewPage: View {
        
         
         ZStack{
+            
             VStack(spacing:0){   //MARK: main vertical stack
                 
                 HStack(spacing: 0){ //MARK: top bar
@@ -82,8 +84,22 @@ struct GameViewPage: View {
                     }
 
                     Spacer()
+                    Freespins(value: userData.freeSpins, action: {
+                        for selectFrame in gameScene.selectedFrames{
+                            selectFrame.removeFromParent()
+                        }
+                        gameScene.selectedFrames = []
+                        gameScene.randomFrame()
+                        UserDataManager.shared.numberOfSpeens += 1
+                        userData.selectedElement = userData.elements.randomElement()?.0
+                        speenStart()
+                        bet = 100
+                        gameScene.autoSpeen(afterSpeen: {
+                            speenStop()
+                        })
+                        userData.freeSpins -= 1
+                    })
                     
-                    TopBarIcon(imageName: "Info7")
                     Button {
                         selectionView = "Shop"
                     } label: {
@@ -120,23 +136,20 @@ struct GameViewPage: View {
                         .onTapGesture(perform: {update()})
                         
                         
-//                    Button {
-//                        if gameScene.selectedFrames.count > 0{
-//                            gameScene.removeFrames()
-//                            gameScene.isSelect = false
-//                            betON = true
-//                            chooseON = false
-//                            selectON = false
-//                        }
-//
-//
-//                    } label: {
-//                        Image(selectON ? "Update" : "UpdateNotActive")
-//
-//                    }
-//                    .padding(.leading,  sceneWidth*0.85)
-//                    .padding(.bottom, sceneWidth*1.05)
-//                    .disabled(!selectON)
+                    Button {
+                        if userData.selectedElement != nil{
+                            gameScene.createGrid()
+                            gameScene.createFrameElements()
+                        }
+                        
+
+                    } label: {
+                        Image(!isSpeenON ? "Update" : "UpdateNotActive")
+
+                    }
+                    .padding(.leading,  sceneWidth*0.85)
+                    .padding(.bottom, sceneWidth*1.05)
+                    .disabled(isSpeenON)
                     
 
                     
@@ -181,14 +194,23 @@ struct GameViewPage: View {
                         }, isChoosed: userData.selectedElement == nil, elementName: userData.selectedElement)
                     }
                     .frame(width: (ContentView().frameWidth-20)/2)
+                    
                     Spacer()
+                    
                     VStack{
                         BetView(isActive: betON, bet: bet, activeMinus: {
-                            bet-=10
+                            if bet  < 10{
+                                bet -= 10 - (10 - bet)
+                            } else {
+                                bet-=10
+                            }
+                            
                             update()
                             
                         }, activePlus: {
-                            if bet < userData.coins{
+                            if (userData.coins - bet) < 10{
+                                bet += userData.coins - bet
+                            } else if bet < userData.coins{
                                 bet+=10
                             }
                             
@@ -205,8 +227,10 @@ struct GameViewPage: View {
                                 }, isActive: !speenON, text: "STOP", imageName: "Speen")
                             } else {
                                 SpeenButton(action: {
+                                    UserDataManager.shared.numberOfSpeens += 1
                                     speenStart()
                                     gameScene.speen()
+                                    userData.coins -= bet
                                 }, isActive: isSpeenON, text: "SPEEN", imageName: "Speen")
                             }
                         }
@@ -214,7 +238,9 @@ struct GameViewPage: View {
                         
                         SpeenButton(action: {
                             if !isSpeen{
+                                UserDataManager.shared.numberOfSpeens += 1
                                 speenStart()
+                                userData.coins -= bet
                                 gameScene.autoSpeen(afterSpeen: {
                                     speenStop()
                                 })
@@ -266,7 +292,7 @@ struct GameViewPage: View {
             }
             
             if isWinnerPage{
-                GameWin(winCoins: winnings, winBonus: winBonus , menuButtonAction: {
+                GameWin(winCoins: winnings, winBonus: winBonus , freeSpeens: freeSpeens, menuButtonAction: {
                     
                     self.presentationMode.wrappedValue.dismiss()
                     
@@ -295,6 +321,14 @@ struct GameViewPage: View {
             } label: {
                 //
             }
+            if userData.firstStart {
+                GuidePage(gameScene: GameScene(), firstBtnAction: {
+                    userData.firstStart = false
+                }, secondButtonAction: {
+                    userData.firstStart = false
+                })
+            }
+          
         }
         
     }
@@ -307,6 +341,9 @@ struct GameViewPage: View {
                 xValue = Int(element.1.dropFirst() ) ?? 2
             }
         }
+        freeSpeens = 0
+        bomb = false
+        winBonus = false
         for element in gameScene.selectedElements{
             if element == userData.selectedElement{
                 matchCount += 1
@@ -318,7 +355,8 @@ struct GameViewPage: View {
                 bomb = true
             }
             if element == "Free speens"{
-                freeSpeens = true
+                freeSpeens += 1 * (bonuses?.rawValue ?? 1)
+                userData.freeSpins += 1 * (bonuses?.rawValue ?? 1)
             }
         }
         
@@ -331,20 +369,32 @@ struct GameViewPage: View {
             }
             
             winnings = Int(bet  * matchWithBomb * xValue * (bonuses?.rawValue ?? 1))
+            
+            if winnings > UserDataManager.shared.allTimeBest{
+                UserDataManager.shared.allTimeBest = winnings
+            }
+            if winnings > UserDataManager.shared.todayBest {
+                UserDataManager.shared.todayBest = winnings
+            }
             isWinnerPage = true
             userData.coins += winnings
             
             
-        }else if matchCount > 0 || freeSpeens || winBonus {
+        }else if matchCount > 0 || freeSpeens > 0 || winBonus {
             
             winnings = Int(bet / gameScene.selectedElements.count * matchCount * xValue * (bonuses?.rawValue ?? 1))
                 isWinnerPage = true
                 userData.coins += winnings
             
+            if winnings > UserDataManager.shared.allTimeBest{
+                UserDataManager.shared.allTimeBest = winnings
+            }
+            if winnings > UserDataManager.shared.todayBest {
+                UserDataManager.shared.todayBest = winnings
+            }
             
         } else {
             
-                userData.coins -= bet
         }
         
     }
@@ -372,6 +422,7 @@ struct GameViewPage: View {
         chooseON = true
         gameScene.createFrameElements()
         isSpeenON = false
+        bonuses = nil
         bet = 0
     }
 }

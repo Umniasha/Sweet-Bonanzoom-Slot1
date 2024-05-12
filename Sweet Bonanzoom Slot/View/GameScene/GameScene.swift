@@ -65,6 +65,7 @@ class GameScene: SKScene {
     }
     
     func createFrameElements(){
+        if elementsArray.count > 0{
             if elementsArray[0].children.isEmpty {
                 for element in elementsArray {
                     let frame = SKSpriteNode(imageNamed: "ElementFrameGS")
@@ -75,6 +76,8 @@ class GameScene: SKScene {
                 }
             }
         isSelect = true
+        }
+            
         
     }
     
@@ -82,6 +85,19 @@ class GameScene: SKScene {
         for frame in frameArray{
             frame.removeFromParent()
         }
+    }
+    
+    func randomFrame(){
+        var array = elementsArray.shuffled()
+        for _ in 0...9{
+            let frame = SKSpriteNode(imageNamed: "SelectElementFrameGS")
+            frame.size = CGSize(width: sceneWidth * 0.16, height: sceneWidth * 0.16)
+            frame.zPosition = 100
+            frame.name = "SelectElementFrameGS"
+            array.removeFirst().addChild(frame)
+            selectedFrames.append(frame)
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -252,6 +268,11 @@ class GameScene: SKScene {
     }
     
     func createGrid(){
+        for element in elementsArray {
+            element.removeFromParent()
+        }
+        elementsArray = []
+
         fillNameArray()
         
         let beginPosition = CGPoint(x: sceneWidth*0.225, y: sceneHeight*0.87)

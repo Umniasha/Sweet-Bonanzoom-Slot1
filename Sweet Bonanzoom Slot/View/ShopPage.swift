@@ -20,7 +20,6 @@ struct ShopPage: View {
                 isBought = true
             }
         }
-        print(isBought)
         return isBought
     }
     

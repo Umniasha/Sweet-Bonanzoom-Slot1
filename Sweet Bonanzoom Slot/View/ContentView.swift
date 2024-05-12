@@ -14,7 +14,7 @@ struct ContentView: View {
         
         ZStack {
             MainMenuPage()
-            if !showMenuPage{
+            if !showMenuPage && UserDataManager.shared.firstStart{
                 FirstWelcomePage(isFirstWelcomeViewShowing: $isFirstWelcomeViewShowing)
                       .offset(x: isFirstWelcomeViewShowing ? 0 : -UIScreen.main.bounds.width)
 

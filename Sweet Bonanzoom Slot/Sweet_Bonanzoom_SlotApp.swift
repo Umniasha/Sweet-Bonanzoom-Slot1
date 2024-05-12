@@ -16,8 +16,12 @@ struct Sweet_Bonanzoom_SlotApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(userData)
-            
-            
+                .onAppear {
+//                                    let today = Date()
+//                                    UserDefaults.standard.set(today, forKey: "todayDate")
+                    print(UserDataManager.shared.firstStart)
+                    
+                                }
         }
     }
 }

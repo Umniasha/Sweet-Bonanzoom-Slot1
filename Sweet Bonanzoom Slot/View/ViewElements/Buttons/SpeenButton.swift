@@ -34,7 +34,7 @@ struct SpeenButton: View {
                         .shadow(color: .black, radius: 2, x: 0, y: 2)
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 5)
-                        .frame(width: 80)
+                        //.frame(width: 90)
                 }
             }
             .disabled(!isActive)

@@ -18,7 +18,7 @@ struct GameWin: View {
     
     var winCoins = 100000
     var winBonus = false
-    var freeSpeens = false
+    var freeSpeens = 0
     var menuButtonAction : ()->Void
     var againOrBonusAction: ()->Void
     
@@ -34,6 +34,15 @@ struct GameWin: View {
             Spacer()
             HStack(spacing: 0){
                     VStack(spacing: ContentView().frameWidth*0.06){
+                        if freeSpeens > 0 {
+                            Text("\(freeSpeens)")
+                                .font(.custom("Maven Pro", size: textSize-3))
+                                .bold()
+                                .foregroundColor(.white)
+                                .shadow(color: .black, radius: 2, x: 0, y: 2)
+                                .padding(.bottom, 3)
+                        }
+                        
                         if winBonus  {
                             Text("\(1)")
                                 .font(.custom("Maven Pro", size: textSize-3))
@@ -56,6 +65,14 @@ struct GameWin: View {
                     }
                 
                     VStack(spacing: 0){
+                        
+                        if freeSpeens > 0 {
+                            Image("freespins")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: ContentView().frameWidth*0.13)
+                        }
+                        
                         if winBonus {
                             Image("bonusGame")
                                 .resizable()

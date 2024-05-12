@@ -38,63 +38,7 @@ struct MainMenuPage: View {
                        
 
                 
-                HStack{  //MARK: Biggest menu
-                    Button(action: {
-                        
-                            }) {
-                                Image("LeftArrow")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40 )
-                                    
-                                    
-                            }
-                    
-                    ZStack{
-                        Image("BiggestFrame")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-                        VStack{
-                            Text("BIGEST WIN\n TODAY:")
-                                .font(.custom("Maven Pro", size: 15))
-                                .bold()
-                                .foregroundColor(.white)
-                                .shadow(color: .black, radius: 2, x: 0, y: 2)
-                                .multilineTextAlignment(.center)
-                                .minimumScaleFactor(0.5)
-                            
-                            Text("1000")
-                                .font(.custom("Maven Pro", size: 25))
-                                .bold()
-                                .foregroundColor(.white)
-                                .shadow(color: .black, radius: 2, x: 0, y: 2)
-                                .multilineTextAlignment(.center)
-                                .minimumScaleFactor(0.5)
-                        }
-                        .padding(.bottom, 5)
-                        
-                        HStack{
-                            Image("LeftCup")
-                            Spacer()
-                            Image("RightCup")
-                        }
-                        .padding([.leading, .trailing], -25)
-                            
-                    }
-                    
-                    Button(action: {
-                        
-                            }) {
-                                Image("RightArrow")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40 )
-                                    
-                                    
-                            }
-                }
-                .padding(.bottom, -20)
+             Biggest()
                 
                 HStack(alignment: .top, spacing: 0){  //MARK: Buttons play and shop
                     ZStack{
